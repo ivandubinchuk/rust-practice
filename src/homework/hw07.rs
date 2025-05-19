@@ -11,22 +11,25 @@ fn invert_the_case(s: String) -> String {
     }
     changes
 }
-
+#[test]
 fn test() {
-    let data = [
-        ("Hello", "hELLO"),
-        ("Привет", "пРИВЕТ"),
-    ];
+    let data =
+        [
+            ("Hello", "hELLO"),
+            ("Привет", "пРИВЕТ"),
+        ];
 
-    for (a, _) in &data {
-        println!("{}: {}", a, invert_the_case(a.to_string()));
-    }
 
-    for (_, b) in &data {
-        println!("{}: {}", b, invert_the_case(b.to_string()));
-    }
-}
-
-fn main() {
-    test();
+    data
+        .iter()
+        .for_each(|(a, b)| {
+            assert_eq!(
+                invert_the_case(a.to_string()),
+                b.to_string()
+            );
+            assert_eq!(
+                invert_the_case(b.to_string()),
+                a.to_string()
+            );
+        });
 }
