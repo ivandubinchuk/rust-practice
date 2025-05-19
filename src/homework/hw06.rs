@@ -1,9 +1,8 @@
-
 fn draw_tree(triangle_count: u32) {
     let mut base_width = 1;
     let start = triangle_count as i32;
 
-    for triangle in 0..triangle_count + 1 {
+    for triangle in 0..triangle_count {
         for row in 0..=triangle {
             let stars = (2 * row + 1) as usize;
             let spaces = (start - row as i32) as usize;
@@ -15,8 +14,9 @@ fn draw_tree(triangle_count: u32) {
             }
         }
     }
+
     let spaces = base_width / 2;
-    println!("{}", " ".repeat(spaces));
+    println!("{}", " ".repeat(spaces) + "|");
 }
 
 fn main() {
