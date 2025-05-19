@@ -6,7 +6,7 @@ fn gcd0(a: i32, b: i32) -> i32 {
 fn gcd(a: i32, b: i32) -> i32 {
     if a > b{gcd0(a,b)} else{gcd0(b, a)}
 }
-
+#[test]
 fn test() {
     let data =
         [
@@ -29,13 +29,4 @@ fn test() {
     }
 }
 
-
-fn main() {
-    let  a:i32 = 1028;
-    let  b:i32 = 2900;
-
-
-    println!("{}", gcd(a, b));
-    test();
-}
 

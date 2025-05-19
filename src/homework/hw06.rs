@@ -16,10 +16,10 @@ fn draw_tree(triangle_count: u32) {
     }
 
     let spaces = base_width / 2;
-    println!("{}", " ".repeat(spaces) + "|");
+    println!("{}", " ".repeat(spaces));
 }
-
-fn main() {
+#[test]
+fn test() {
     let triangle_count = 5;
     draw_tree(triangle_count);
 }
